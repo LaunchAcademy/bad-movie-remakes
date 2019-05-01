@@ -1,0 +1,23 @@
+<h2>Log a New Bad Movie Remake</h2>
+
+{{#if error }}
+<p style="color: red;">{{ error }}</p>
+{{/if}}
+
+<form action="/bad-movie-remakes" method="POST">
+  <div>
+    <label for="title">
+      Movie Title
+    </label>
+    <input type="text" name="title" id="title" />
+  </div>
+
+  <div>
+    <label for="description">Description</label>
+    <textarea name="description">{{ movie.description }}</textarea>
+  </div>
+
+  <div>
+    <input type="submit" value="Add Movie" />
+  </div>
+</form>
