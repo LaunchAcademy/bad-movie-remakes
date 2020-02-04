@@ -33,68 +33,10 @@ const getMovies = () => {
 }
 
 app.get("/", (req, res) => {
-  res.send("Hello from the backend")
+  res.send("Bad Movie DataBase")
 })
 
-app.get("/bad-movie-remakes/new", (req, res) => {
-  //create a new movie object for th user to populate
-  const movie = {title: "", description: ""}
-  //present them with a form to enter the new movie
-  //don't populate the error because the user hasn't 
-  //tried to do anything yet
-  res.render("badMovieRemakes/new", {movie: movie})
-})
 
-app.get("/bad-movie-remakes/:movieTitle", (req, res) => {
-  //getting the list of saved movies
-  const movies = getMovies()
-  //search the list for the movie specified in the url
-  const movie = movies.find(movie => {
-    return movie.title === req.params.movieTitle
-  })
-  if(movie) {
-    //found: render the template
-    res.render("badMovieRemakes/show", {movie: movie})
-  }
-  else {
-    //not found: render a 404
-    res.status(404).send("Movie not found")
-  }
-})
-
-app.get("/bad-movie-remakes", (req, res) => {
-  const movies = getMovies()
-  res.render("badMovieRemakes/index", {movies: movies})
-})
-
-app.post("/bad-movie-remakes", (req, res) => {
-  //get the input: build a movie object
-  const movie = { title: req.body.title, description: req.body.description }
-  //check to see if the user specified a title
-  if(movie.title.trim() !== "") {
-    //do something with the input
-
-    //get the list of already saved movies
-    let movies = getMovies()
-    //add the new movie to the list
-    movies.push(movie)
-    //replace the saved list of movies with our new list
-    fs.writeFileSync(moviePath, 
-      JSON.stringify(movies))
-
-    //redirect the user if successful
-    res.redirect("/bad-movie-remakes")
-  }
-  else {
-    //user didn't specify a title: 
-    //also, let them re-enter data and show them an error
-    res.render("badMovieRemakes/new", { 
-      movie: movie, 
-      error: "Could not save movie" 
-    })
-  }
-  
-})
 
 app.listen(3000, "0.0.0.0", () => {
   console.log("Server is listening...")
