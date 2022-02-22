@@ -1,1 +1,19 @@
-[{"title":"Jumanji 7","description":"He plays Zathura aka Jumanji...IN SPACE!!!!"},{"title":"Tequila Mockingbird","description":"Drunk pigeon causes community hysteria when he starts speaking (starring Christian)"},{"title":"Top Gun 2","description":"Maverick dogfights a zombie version of Goose"}]
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Star Trek",
+      "description": "The film follows James T. Kirk (Chris Pine) and Spock (Zachary Quinto) aboard the USS Enterprise as they combat Nero (Eric Bana), a Romulan from their future who threatens the United Federation of Planets. "
+    },
+    {
+      "id": 2,
+      "title": "Serenity",
+      "description": "Serenity is a 2005 American space Western film written and directed by Joss Whedon. The film is a continuation of Whedon's short-lived 2002 Fox television series Firefly and stars the same cast, taking place after the events of the final episode."
+    },
+    {
+      "id": 3,
+      "title": "The Simpsons Movie",
+      "description": "The Simpsons Movie is a 2007 American animated comedy film based on the long-running animated sitcom The Simpsons. The film follows Homer Simpson, who irresponsibly pollutes the lake in Springfield, causing the Environmental Protection Agency to imprison the town under a dome."
+    }
+  ]
+}
