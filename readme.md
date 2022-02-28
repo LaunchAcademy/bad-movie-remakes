@@ -1,25 +1,23 @@
-To use this code for a clinic ensure you are on the starter-code branch and then work through the following.
+# To use this code for a clinic ensure you are on the starter-code branch and then work through the following
 
+- Model has already been provided for use in the router
 
-* define getMovies function using `fs.readFileSync(moviePath).toString()`
+- root route is currently sending text back as the response.
 
-* create root route sending "Welcome to the BMDB"
+  - change root route to redirect to /movies
 
-* create new route for get action
+- create new route for get action
+
   - define movie as an object with empty values
   - send the movie object in the render
 
-* create show page
-  - use getMovies
-  - use .find and req.params.movieTitle
-  - conditionally render the show or a 404
+- create index
 
-* create index
-  - use getMovies
+  - use findAll method in the model
   - render with movies:movies
+  - establish links to show page urls
 
-* create post for `"/bad movie-remakes"`
-  - create movie using req.body.attr
-  - conditonal to ensure attrs are present
-
-  
+- create show page
+  - use findById method in the model
+  - use .find to located movie id
+  - conditionally render the show or a 404
