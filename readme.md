@@ -1,25 +1,30 @@
-To use this code for a clinic ensure you are on the starter-code branch and then work through the following.
+# To use this code for a clinic ensure you are on the Tuesday-Clinic-Starter-Code branch and then work through the following
 
+## Build out Movie model
 
-* define getMovies function using `fs.readFileSync(moviePath).toString()`
+- Build constructor to match the json file objects.
+- Create a file path variable outside of the class.
+- Implement the findAll and findById methods.
+- Verify the provided controller and views work with methods.
 
-* create root route sending "Welcome to the BMDB"
+## Create view at movies/new
 
-* create new route for get action
-  - define movie as an object with empty values
-  - send the movie object in the render
+- Create form with inputs to match the Movie model.
+- Make a link back to /movies under the form.
 
-* create show page
-  - use getMovies
-  - use .find and req.params.movieTitle
-  - conditionally render the show or a 404
+## Create route at /new
 
-* create index
-  - use getMovies
-  - render with movies:movies
+- Render view at movies/new
 
-* create post for `"/bad movie-remakes"`
-  - create movie using req.body.attr
-  - conditonal to ensure attrs are present
+## Create post route at /
 
-  
+- Get inputs by using req.body
+- If valid input, redirect to index page.
+- Otherwise, render movies/new with an error message.
+- Output error message on template.
+
+## Save the movie to json file
+
+- Implement getNextMovieId method.
+- Explain what lodash does for us.
+- Implement save method and test.
